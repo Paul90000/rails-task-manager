@@ -1,0 +1,31 @@
+<div class ="wrapper">
+
+  <h1>My Tasks</h1>
+
+  <ul id="tasks">
+    <% @tasks.each do |task| %>
+    <li>
+      <% if task.completed %>
+        <%= link_to toggle_complete_task_path(task), method: :patch do %>
+          <i class="fa fa-check-square-o"></i>
+        <% end %>
+      <% else %>
+        <%= link_to toggle_complete_task_path(task), method: :patch do %>
+          <i class="fa fa-square-o"></i>
+        <% end %>
+      <% end %>
+      <%= link_to task.title, task_path(task.id) %>
+      -----
+      <%= link_to task_path(task.id), method: :delete, data: { confirm: "Delete #{task.title}?" } do %>
+        <i class="fa fa-trash-o" aria-hidden="true"></i>
+      <% end %>
+    </li>
+    <% end %>
+  </ul>
+
+  <hr>
+
+  <%= link_to new_task_path do %>
+    <i></i> Add a new task
+  <% end %>
+</div>

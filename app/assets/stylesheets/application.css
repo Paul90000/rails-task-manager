@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+ul {
+  padding: 25px;
+}
+
+.task-design {
+  padding: 8px;
+}
+
+.edit-design {
+  padding: 8px;
+  margin: 0 0 32px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

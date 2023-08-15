@@ -1,3 +1,5 @@
+require("@rails/ujs").start();
+
 import { Application } from "@hotwired/stimulus"
 
 const application = Application.start()
