@@ -1,8 +1,7 @@
 <div class ="wrapper">
 
   <h1>My Tasks</h1>
-
-  <ul id="tasks">
+  <ul>
     <% @tasks.each do |task| %>
     <li>
       <% if task.completed %>
@@ -22,7 +21,6 @@
     </li>
     <% end %>
   </ul>
-
   <hr>
 
   <%= link_to new_task_path do %>

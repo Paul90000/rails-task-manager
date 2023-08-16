@@ -5,9 +5,5 @@ Rails.application.routes.draw do
   # get 'tasks/:id', to: 'tasks#show', as: 'task'
   # get 'tasks/:id/edit', to: 'tasks#edit', as: 'edit_task'
 
-  resources :tasks do
-    member do
-      get :toggle_complete
-    end
-  end
+  resources :tasks
 end

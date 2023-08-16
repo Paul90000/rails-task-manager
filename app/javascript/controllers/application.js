@@ -1,4 +1,4 @@
-require("@rails/ujs").start();
+
 
 import { Application } from "@hotwired/stimulus"
 

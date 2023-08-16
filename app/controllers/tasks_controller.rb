@@ -6,7 +6,6 @@ class TasksController < ApplicationController
   end
 
   def show
-    @task = Task.find(params[:id])
   end
 
   def new
@@ -14,16 +13,12 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(task_params)
-    if @task.save
-      redirect_to tasks_path
-    else
-      render :new
-    end
+    task = Task.new(task_params)
+    task.save
+    redirect_to tasks_path
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
@@ -33,12 +28,6 @@ class TasksController < ApplicationController
 
   def destroy
     @task.destroy
-    redirect_to tasks_path
-  end
-
-  def toggle_complete
-    @task = Task.find(params[:id])
-    @task.update(completed: !@task.completed)
     redirect_to tasks_path
   end
 
